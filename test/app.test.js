@@ -6,7 +6,10 @@ test('add character', () => {
   const dreamteam = new Team();
   dreamteam.add(char);
   const recieved = dreamteam.members;
-  const expected = new Set([{"attack": 25, "defence": 40, "health": 100, "name": "John"}]);
+  const expected = new Set([{
+    attack: 25, defence: 40, health: 100, name: 'John',
+  },
+  ]);
   expect(recieved).toEqual(expected);
 });
 
@@ -29,12 +32,18 @@ test('add all characters', () => {
   dreamteam.addAll(peter, miles, gwen);
   const recieved = dreamteam.members;
   const expected = new Set([
-    { name: 'Peter', health: 100, attack: 25, defence: 40, },
-    { name: 'Miles', health: 100, attack: 30, defence: 35, },
-    { name: 'Gwen', health: 100, attack: 45, defence: 20, },
-  ])
+    {
+      name: 'Peter', health: 100, attack: 25, defence: 40,
+    },
+    {
+      name: 'Miles', health: 100, attack: 30, defence: 35,
+    },
+    {
+      name: 'Gwen', health: 100, attack: 45, defence: 20,
+    },
+  ]);
   expect(recieved).toEqual(expected);
-})
+});
 
 test('set to array', () => {
   const peter = new Character('Peter', 25, 40);
@@ -44,9 +53,15 @@ test('set to array', () => {
   dreamteam.addAll(peter, miles, gwen);
   const recieved = dreamteam.toArray();
   const expected = [
-    { name: 'Peter', health: 100, attack: 25, defence: 40, },
-    { name: 'Miles', health: 100, attack: 30, defence: 35, },
-    { name: 'Gwen', health: 100, attack: 45, defence: 20, },
+    {
+      name: 'Peter', health: 100, attack: 25, defence: 40,
+    },
+    {
+      name: 'Miles', health: 100, attack: 30, defence: 35,
+    },
+    {
+      name: 'Gwen', health: 100, attack: 45, defence: 20,
+    },
   ];
   expect(recieved).toEqual(expected);
-})
+});
